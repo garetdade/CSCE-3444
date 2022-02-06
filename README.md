@@ -1,2 +1,2 @@
 # CSCE-3444
-READ ME for BLACKBOOK website
+READ ME for Project TopPicks website
