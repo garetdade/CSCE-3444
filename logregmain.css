@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    font-family: sans-serif;
+    /*background-image: url("thumbnail_Blurred Image.png");
+    background-color: blueviolet; /* to be used when Image not available
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    background-position: unset;
+    background-repeat: no-repeat;*/
+    
+}
+
+.Loginbox{
+
+    width: 250px;
+    height: 400px;
+    background-color: rgb(250, 250, 250);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    padding: 70px 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.logo{
+    margin: 30px auto;
+    text-align: center;
+
+}
+.logo img{
+    height: auto;
+    width: 80px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #999;
+    border-radius: 50%;
+    
+}
+.full{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(Thumbnail.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.logregbox{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+    
+}
+.toggle{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #9846be,#e0be7a);
+    border-radius: 30px;
+    transition: .5s;
+
+}
+.input{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    border-radius: 50%;
+}
+.input-field{
+    padding: 10px 0;
+    width: 100%;
+    transition: .5s;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    background: transparent;
+    outline: none;
+
+}
+.forgotp{
+    font-size: x-small;
+}
+.submitbtn{
+    width: 75%;
+    padding: 10px 0;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #311b35,#416a6b);
+    border: 0;
+    outline: none;
+    border-radius: 30px; 
+    text-emphasis-color: #fff; 
+    
+}
+.reg{
+    width: 60%;
+    padding: 10px 0;
+    cursor: pointer;
+    display: block;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #835f2a,#8947b4);
+}
+.checkbox{
+    margin: 30px 10px 30px 0;
+}
+span{
+    font-size: 12px;
+    bottom: 65px;
+    position: absolute;
+}
+#loginform{
+    left: 15px;
+
+}
+
+#registerform{
+    left: 450px;
+}
