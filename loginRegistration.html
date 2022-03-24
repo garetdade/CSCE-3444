@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="logregmain.css">
+    <script type="text/Javascript"></script>
+</head>
+<body>
+    <div class="full">
+        <div class="Loginbox">
+            
+            <div class="logregbox">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button  type="button" class="toggle" onclick="loginform()">Log in</button>
+                    <button  type="button" class="toggle" onclick="registerform()">Register</button>
+                    
+                </div>
+            </div>
+            <form id="loginform" class="input">
+                <input type="text" class="input-field" placeholder="User ID" required>
+                <input type="password" class="input-field" placeholder="Password" required><br>
+                <a class="forgotp" href="#">Forgot password?</a><br>
+                <input type="checkbox" class="checkbox"><span>Remember password</span>
+                <button type="submit" class="submitbtn" > Sign in</button>
+            </form>
+            <form id="registerform" class="input">
+                <input type="text" class="input-field" placeholder="User ID" required>
+                <input type="text" class="input-field" placeholder="First Name" required>
+                <input type="text" class="input-field" placeholder="Last Name" required>
+                <input type="email" class="input-field" placeholder="email ID" required><br>
+                <input type="password" class="inputfield" placeholder="password" required>
+                <input type="checkbox" class="checkbox"><span>I agree to terms and conditions</span>
+                <button type="submit" class="reg" > Register</button>
+            </form>
+            
+           
+        </div>
+        <div class="logo">
+            
+            <img src="logo.png"> 
+        </div>
+        
+        
+    </div>
+    <script>
+        var x = document.getElementById("loginform");
+        var y = document.getElementById("registerform");
+        var z = document.getElementById("btn");
+
+        function registerform(){
+            x.style.left = "-400px";
+            y.style.left = "10px";
+            z.style.left = "110px";
+        }
+        function loginform(){
+            x.style.left = "15px";
+            y.style.left = "400px";
+            z.style.left = "0px";
+        }
+    </script>
+    <script scr="registerapp.js"></script>
+</body>
+</html>
