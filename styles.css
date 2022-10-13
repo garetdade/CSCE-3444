@@ -1,6 +1,5 @@
-@font-face {
-    font-family: 'opendyslexic';
-    src: url('/OpenDyslexic-Regular.otf');
-    font-style: normal;
-    font-weight: normal;
+body {
+    font-family:'Arial' !important;
+    letter-spacing: 3px !important;
+    word-spacing: 10.5px !important;
 }
