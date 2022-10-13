@@ -1,5 +1,11 @@
 body {
-    font-family:'Arial' !important;
     letter-spacing: 3px !important;
     word-spacing: 10.5px !important;
+    line-height: normal !important;
+}
+
+p {
+    letter-spacing: 3px !important;
+    word-spacing: 10.5px !important;
+    line-height: normal !important;
 }

@@ -9,4 +9,12 @@ function gotMessage(message,sender,sendresponse)
 		par.style['color'] = 'black';
 		par.style['font-variant-ligatures'] = 'none';
 	}
+
+	let headers3 = document.getElementsByTagName("h3");
+	for(hea of headers3)
+	{
+		hea.style['background-color'] = 'AntiqueWhite';
+		hea.style['color'] = 'black';
+		hea.style['font-variant-ligatures'] = 'none';
+	}
 }
