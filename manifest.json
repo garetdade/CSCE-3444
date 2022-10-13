@@ -3,5 +3,19 @@
     "name": "Namer", 
     "description": "", 
     "version": "0.1.0", 
-    "author": "Team Heimdall"
+    "author": "Team Heimdall",
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "browser_action": {
+    }
 }
