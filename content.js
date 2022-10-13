@@ -1,4 +1,4 @@
-/*chrome.runtime.onMessage.addListener(gotMessage);
+chrome.runtime.onMessage.addListener(gotMessage);
 function gotMessage(message,sender,sendresponse)
 {
 	console.log(message.txt);
@@ -9,4 +9,4 @@ function gotMessage(message,sender,sendresponse)
 		par.style['color'] = 'black';
 		par.style['font-variant-ligatures'] = 'none';
 	}
-}*/
+}
