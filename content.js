@@ -1,5 +1,17 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
+function comicSansChange() {
+	//Log for debugging only
+	console.log("comicSansChange() initiated...");
+
+	let paragraphs = document.getElementsByTagName("p");
+	
+	for(par of paragraphs)
+	{
+		par.style['fontFamily'] = "Comic Sans MS";
+	}
+}
+
 function paragraphHighlighting()
 {
 	//Log for debugging only
@@ -39,11 +51,19 @@ function gotMessage(message,sender,sendresponse)
 
 	//Setting up toggleables
 	chrome.storage.local.get([
-		"highlighting"
+		"highlighting",
+		"useComicSans"
 	], function(items) {
 		var highlighting = items.highlighting;
+		var comicSansSelected = items.useComicSans;
+
 		if (highlighting === true) {
 			paragraphHighlighting();
+		}
+
+		console.log(comicSansSelected);
+		if (comicSansSelected === true) {
+			comicSansChange();
 		}
 	});
 }
