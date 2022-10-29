@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener(gotMessage);
 function paragraphHighlighting()
 {
 	//Log for debugging only
-	console.log("Paragraph Highlighting Initiated...")
+	console.log("paragraphHighlighting() initiated...")
 
 	//Takes all "p" HTML elements and stores them in var paragraphs
 	let paragraphs = document.getElementsByTagName("p");
@@ -12,9 +12,6 @@ function paragraphHighlighting()
 	//Loops through all p elements
 	for(par of paragraphs)
 	{
-		//Log for debugging only
-		console.log(count);
-		
 		//Odd-even check to alternate paragraph shading
 		odd = count % 2;
 		switch(odd) {
@@ -47,7 +44,7 @@ function comicSansChange() {
 function gotMessage(message,sender,sendresponse)
 {
 	//Relays the message that the listener picked up to the log
-	console.log(message.txt);
+	console.log("message received at content.js");
 
 	//Setting up toggleables
 	chrome.storage.local.get([
@@ -61,7 +58,6 @@ function gotMessage(message,sender,sendresponse)
 			paragraphHighlighting();
 		}
 
-		console.log(comicSansSelected);
 		if (comicSansSelected === true) {
 			comicSansChange();
 		}
