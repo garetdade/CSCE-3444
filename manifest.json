@@ -18,5 +18,11 @@
     },
 
     "browser_action": {
-    }
+    },
+
+    "permissions": [
+        "storage"
+    ],
+
+    "options_page": "options.html"
 }
