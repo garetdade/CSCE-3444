@@ -1,3 +1,4 @@
+//Routes received message to gotMessage() for parsing into action groups
 chrome.runtime.onMessage.addListener(gotMessage);
 
 //Adjusts contrast of all images on a webpage
@@ -19,7 +20,6 @@ function imageContrast(txt)
 			break;
 	}
 }
-
 
 function paragraphHighlighting()
 {
@@ -93,12 +93,15 @@ function onClick(type)
 			comicSansChange();
 		}
 	});
+
+	return;
 }
 
 //In-progress function for routing all contextMenu actions to functions
 function onContext(type, txt)
 {
 	imageContrast(txt);
+	return;
 }
 
 //Parses message type and routes to action category
@@ -121,4 +124,5 @@ function gotMessage(message,sender,sendresponse)
 			onContext(type, txt);
 			break;
 	}
+	return;
 }
