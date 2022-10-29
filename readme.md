@@ -3,19 +3,19 @@ This Chrome extension is designed to provide a suite of tools that allow a smoot
 
 ## **Tools:**
 ### **Dyslexia Font Changing**
-This tool is designed to swap fonts displayed in a given webpage from their existing form to *Open Dyslexia*, a font that makes it easier for individuals with dyslexia to read text.
+This tool is designed to swap fonts displayed in paragraphs on a given webpage from their existing form to *Comic Sans*, a font that makes it easier for individuals with dyslexia to read text.
 
-### **Webpage Color Swapping**
-The webpage color swap feature is built to invert a webpage's background color and text color's. Swapping to light text on a dark background has been shown to help visibility for some, while reducing eye strain.
+### **HTML Paragraph Highlighting**
+The element highlighting feature allows for each HTML paragraph to be separately "highlighted" with a background color that is different from that of the webpage, making elements easier to distinguish from one another.
 
 ### **Text-to-Speech Reading**
 The text-to-speech feature will allow HTML text to be read directly to the user through text-to-speech synthesization.
 
+### **Webpage Color Swapping**
+The webpage color swap feature is built to invert a webpage's background color and text color's. Swapping to light text on a dark background has been shown to help visibility for some, while reducing eye strain.
+
 ### **Adjustable Font Spacing**
 The font spacing feature allows users to adjust the amount of space between displayed characters and words.
-
-### **HTML Element Highlighting**
-The element highlighting feature allows for each HTML element to be separately "highlighted" with a background color that is different from that of the webpage, making elements easier to distinguish from one another.
 
 ---
 
