@@ -3,7 +3,6 @@ chrome.runtime.onMessage.addListener(gotMessage);
 function comicSansChange() {
 	//Log for debugging only
 	console.log("comicSansChange() initiated...");
-
 	let paragraphs = document.getElementsByTagName("p");
 	
 	for(par of paragraphs)
@@ -26,16 +25,17 @@ function paragraphHighlighting()
 	{
 		//Log for debugging only
 		console.log(count);
-
+		
 		//Odd-even check to alternate paragraph shading
-		if (count % 2 == 0)
-		{
-			par.style['background-color'] = 'AntiqueWhite';
-		}
+		odd = count % 2;
+		switch(odd) {
+			case 0:
+				par.style['background-color'] = 'AntiqueWhite';
+				break;
 
-		else 
-		{
-			par.style['background-color'] = 'Beige';
+			case 1: 
+				par.style['background-color'] = 'Beige';
+				break;
 		}
 
 		par.style['color'] = 'black';
