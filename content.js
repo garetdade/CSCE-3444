@@ -1,9 +1,20 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
+function imageContrast()
+{
+	console.log("Imagecontrast called....");
+	let images = document.getElementsByTagName("img");
+
+	for(img of images)
+	{
+		img.style["filter"] = "contrast(150%)";
+	}
+}
+
 function paragraphHighlighting()
 {
 	//Log for debugging only
-	console.log("paragraphHighlighting() initiated...")
+	console.log("paragraphHighlighting() initiated...");
 
 	//Takes all "p" HTML elements and stores them in var paragraphs
 	let paragraphs = document.getElementsByTagName("p");
@@ -51,7 +62,7 @@ function onLoad()
 	return;
 }
 
-function onClick()
+function onClick(type)
 {
 	//Setting up toggleables
 	chrome.storage.local.get([
@@ -71,6 +82,12 @@ function onClick()
 	});
 }
 
+function onContext(type)
+{
+	console.log("onContext() called...");
+	imageContrast();
+}
+
 function gotMessage(message,sender,sendresponse)
 {
 	//Relays the message that the listener picked up to the log
@@ -79,11 +96,15 @@ function gotMessage(message,sender,sendresponse)
 
 	switch(type) {
 		case "onLoad_request":
-			onLoad()
+			onLoad();
 			break;
 		
 		case "onClick_request":
-			onClick()
+			onClick(type);
+			break;
+
+		case "contrast_request":
+			onContext(type);
 			break;
 	}
 }
