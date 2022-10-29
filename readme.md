@@ -6,7 +6,7 @@ This Chrome extension is designed to provide a suite of tools that allow a smoot
 This tool is designed to swap fonts displayed in paragraphs on a given webpage from their existing form to *Comic Sans*, a font that makes it easier for individuals with dyslexia to read text.
 
 ### **HTML Paragraph Highlighting**
-The element highlighting feature allows for each HTML paragraph to be separately "highlighted" with a background color that is different from that of the webpage, making elements easier to distinguish from one another.
+The element highlighting feature allows for each HTML paragraph to be separately "highlighted" or "shaded" with a background color that is different from that of the webpage, making elements easier to distinguish from one another.
 
 ### **Text-to-Speech Reading**
 The text-to-speech feature allows a user to highlight text and have it read aloud. To use this feature, highlight text, right click, and select "Speak selected text". Reading speed can be configured in the options menu.
