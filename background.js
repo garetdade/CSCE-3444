@@ -11,11 +11,20 @@ chrome.contextMenus.create({
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	var text = info.selectionText;
 
+	chrome.storage.local.get({
+		"readingSpeed_setting" : 1.0
+	}, function(items) {
+		var readingSpeed = items.readingSpeed_setting;
+		readingSpeed = parseFloat(readingSpeed);
+		console.log("Reading speed:");
+		console.log(readingSpeed);
+		chrome.tts.speak(text, {"rate" : readingSpeed});
+	});
+
 	let msg = {
 		type: "tts_request",
 		txt: text
 	}
-	chrome.tts.speak(text);
 });
 
 //Acts when extension icon is clicked

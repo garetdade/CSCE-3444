@@ -2,10 +2,13 @@
 function save_options() {
     var wantsHighlighting = document.getElementById('phi').checked;
     var comicSansSelected = document.getElementById('comicSansSelect').checked;
-    console.log(comicSansSelected);
+    var readingSpeed = document.getElementById('readingspeed').value;
+
+    console.log(readingSpeed);
     chrome.storage.local.set({
       highlighting: wantsHighlighting,
-      useComicSans: comicSansSelected
+      useComicSans: comicSansSelected,
+      readingSpeed_setting: readingSpeed
     }, function() {
       // Update status to let user know options were saved.
       var status = document.getElementById('status');
@@ -21,11 +24,12 @@ function save_options() {
   function restore_options() {
     chrome.storage.local.get({
       highlighting: true,
-      useComicSans: false
+      useComicSans: false,
+      readingSpeed_setting: 1.0
     }, function(items) {
-      console.log(items.useComicSans);
       document.getElementById('phi').checked = items.highlighting;
       document.getElementById('comicSansSelect').checked = items.useComicSans;
+      document.getElementById('readingspeed').value = items.readingSpeed_setting;
     });
   }
   document.addEventListener('DOMContentLoaded', restore_options);
