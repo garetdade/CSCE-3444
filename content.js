@@ -41,11 +41,16 @@ function comicSansChange() {
 	}
 }
 
+function tts(text) {
+	chrome.tts.speak("Hello, world.");
+}
+
 function gotMessage(message,sender,sendresponse)
 {
 	//Relays the message that the listener picked up to the log
 	console.log("message received at content.js");
 
+	
 	//Setting up toggleables
 	chrome.storage.local.get([
 		"highlighting",
@@ -62,4 +67,5 @@ function gotMessage(message,sender,sendresponse)
 			comicSansChange();
 		}
 	});
+	
 }
