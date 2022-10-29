@@ -48,6 +48,7 @@ function invertColors() {
 function onLoad()
 {
 	console.log("onLoad() called...")
+	return;
 }
 
 function onClick()
