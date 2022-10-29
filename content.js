@@ -1,11 +1,10 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
+//Adjusts contrast of all images on a webpage
 function imageContrast(txt)
 {
-	console.log("Imagecontrast called....");
 	let images = document.getElementsByTagName("img");
 
-	console.log(txt);
 	switch(txt) {
 		case "50contrast":
 			for(img of images) {img.style["filter"] = "contrast(50%)";}
@@ -21,11 +20,9 @@ function imageContrast(txt)
 	}
 }
 
+
 function paragraphHighlighting()
 {
-	//Log for debugging only
-	console.log("paragraphHighlighting() initiated...");
-
 	//Takes all "p" HTML elements and stores them in var paragraphs
 	let paragraphs = document.getElementsByTagName("p");
 	let count = 0;
@@ -51,27 +48,33 @@ function paragraphHighlighting()
 	}
 }
 
+//Changes paragraph font to Comic Sans
 function comicSansChange() {
 	//Log for debugging only
-	console.log("comicSansChange() initiated...");
 	let paragraphs = document.getElementsByTagName("p");
 	
 	for(par of paragraphs)
 	{
 		par.style['fontFamily'] = "Comic Sans MS";
 	}
+
+	return;
 }
 
+//In progress function for color inversion
 function invertColors() {
 	console.log("invertColors() called...")
+	return;
 }
 
+//In progress function for routing all actions that happen upon loading the page
 function onLoad()
 {
 	console.log("onLoad() called...")
 	return;
 }
 
+//Function for routing all actions that happen upon clicking extension icon
 function onClick(type)
 {
 	//Setting up toggleables
@@ -92,16 +95,16 @@ function onClick(type)
 	});
 }
 
+//In-progress function for routing all contextMenu actions to functions
 function onContext(type, txt)
 {
-	console.log("onContext() called...")
 	imageContrast(txt);
 }
 
+//Parses message type and routes to action category
 function gotMessage(message,sender,sendresponse)
 {
 	//Relays the message that the listener picked up to the log
-	console.log("message received at content.js");
 	var type = message.type;
 	var txt = message.txt;
 
