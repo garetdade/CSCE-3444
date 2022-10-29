@@ -20,12 +20,19 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 		console.log(readingSpeed);
 		chrome.tts.speak(text, {"rate" : readingSpeed});
 	});
-
-	let msg = {
-		type: "tts_request",
-		txt: text
-	}
 });
+
+//Listens for tab load
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+	if (changeInfo.status == 'complete') {
+		let msg = {
+			type: "onLoad_request",
+			txt: ""
+		}
+
+		chrome.tabs.sendMessage(tab.id, msg)
+	}
+  })
 
 //Acts when extension icon is clicked
 chrome.browserAction.onClicked.addListener(IconClicked);
@@ -34,8 +41,8 @@ chrome.browserAction.onClicked.addListener(IconClicked);
 function IconClicked(tab)
 {
 	let msg = {
-		type: "highlight_request",
-		txt: "background.js executed... message sent"
+		type: "onClick_request",
+		txt: ""
 	}
 	chrome.tabs.sendMessage(tab.id,msg);
 }

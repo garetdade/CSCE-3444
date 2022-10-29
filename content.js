@@ -41,16 +41,17 @@ function comicSansChange() {
 	}
 }
 
-function tts(text) {
-	chrome.tts.speak("Hello, world.");
+function invertColors() {
+	console.log("invertColors() called...")
 }
 
-function gotMessage(message,sender,sendresponse)
+function onLoad()
 {
-	//Relays the message that the listener picked up to the log
-	console.log("message received at content.js");
+	console.log("onLoad() called...")
+}
 
-	
+function onClick()
+{
 	//Setting up toggleables
 	chrome.storage.local.get([
 		"shading_setting",
@@ -67,5 +68,21 @@ function gotMessage(message,sender,sendresponse)
 			comicSansChange();
 		}
 	});
-	
+}
+
+function gotMessage(message,sender,sendresponse)
+{
+	//Relays the message that the listener picked up to the log
+	console.log("message received at content.js");
+	var type = message.type;
+
+	switch(type) {
+		case "onLoad_request":
+			onLoad()
+			break;
+		
+		case "onClick_request":
+			onClick()
+			break;
+	}
 }
