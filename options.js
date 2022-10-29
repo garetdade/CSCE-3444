@@ -1,13 +1,13 @@
 // Saves options to chrome.storage
 function save_options() {
-    var wantsHighlighting = document.getElementById('phi').checked;
-    var comicSansSelected = document.getElementById('comicSansSelect').checked;
-    var readingSpeed = document.getElementById('readingspeed').value;
+    var shadingToggle = document.getElementById('paragraphShading_checkbox').checked;
+    var comicSansToggle = document.getElementById('comicSans_checkbox').checked;
+    var readingSpeed = document.getElementById('readingSpeed_range').value;
 
     console.log(readingSpeed);
     chrome.storage.local.set({
-      highlighting: wantsHighlighting,
-      useComicSans: comicSansSelected,
+      shading_setting: shadingToggle,
+      comicSans_setting: comicSansToggle,
       readingSpeed_setting: readingSpeed
     }, function() {
       // Update status to let user know options were saved.
@@ -23,13 +23,13 @@ function save_options() {
   // stored in chrome.storage.
   function restore_options() {
     chrome.storage.local.get({
-      highlighting: true,
-      useComicSans: false,
+      shading_setting: true,
+      comicSans_setting: false,
       readingSpeed_setting: 1.0
     }, function(items) {
-      document.getElementById('phi').checked = items.highlighting;
-      document.getElementById('comicSansSelect').checked = items.useComicSans;
-      document.getElementById('readingspeed').value = items.readingSpeed_setting;
+      document.getElementById('paragraphShading_checkbox').checked = items.shading_setting;
+      document.getElementById('comicSans_checkbox').checked = items.comicSans_setting;
+      document.getElementById('readingSpeed_range').value = items.readingSpeed_setting;
     });
   }
   document.addEventListener('DOMContentLoaded', restore_options);

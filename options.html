@@ -3,20 +3,22 @@
 <head><title>My Test Extension Options</title></head>
 <body>
 
+<h3>Reading Assistance Options</h3>
+
 <label>
-  <input type="checkbox" id="phi">
-  Highlight paragraphs.
+  <input type="checkbox" id="paragraphShading_checkbox">
+  Shade paragraph backgrounds
 </label><br>
 
 <label>
-  <input type="checkbox" id="comicSansSelect">
-  Use Comic Sans font when possible.
+  <input type="checkbox" id="comicSans_checkbox">
+  Use Comic Sans font when possible
 </label>
 
 <h3>Text-to-Speech Options</h3>
 
-<input type="range" id="readingspeed" min=".5" max="5" step=".1">
-<label for="readingspeed">Reading Speed</label>
+<input type="range" id="readingSpeed_range" min=".5" max="5" step=".1">
+<label for="readingSpeed_range">Reading Speed</label>
 
 <div id="status"></div>
 <button id="save">Save</button>

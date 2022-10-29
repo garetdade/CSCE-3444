@@ -53,11 +53,11 @@ function gotMessage(message,sender,sendresponse)
 	
 	//Setting up toggleables
 	chrome.storage.local.get([
-		"highlighting",
-		"useComicSans"
+		"shading_setting",
+		"comicSans_setting"
 	], function(items) {
-		var highlighting = items.highlighting;
-		var comicSansSelected = items.useComicSans;
+		var highlighting = items.shading_setting;
+		var comicSansSelected = items.comicSans_setting;
 
 		if (highlighting === true) {
 			paragraphHighlighting();
