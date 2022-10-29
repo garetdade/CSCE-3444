@@ -1,13 +1,23 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
-function imageContrast()
+function imageContrast(txt)
 {
 	console.log("Imagecontrast called....");
 	let images = document.getElementsByTagName("img");
 
-	for(img of images)
-	{
-		img.style["filter"] = "contrast(150%)";
+	console.log(txt);
+	switch(txt) {
+		case "50contrast":
+			for(img of images) {img.style["filter"] = "contrast(50%)";}
+			break;
+		
+		case "100contrast":
+			for(img of images) {img.style["filter"] = "contrast(100%)";}
+			break;
+
+		case "150contrast":
+			for(img of images) {img.style["filter"] = "contrast(150%)";}
+			break;
 	}
 }
 
@@ -82,10 +92,10 @@ function onClick(type)
 	});
 }
 
-function onContext(type)
+function onContext(type, txt)
 {
-	console.log("onContext() called...");
-	imageContrast();
+	console.log("onContext() called...")
+	imageContrast(txt);
 }
 
 function gotMessage(message,sender,sendresponse)
@@ -93,6 +103,7 @@ function gotMessage(message,sender,sendresponse)
 	//Relays the message that the listener picked up to the log
 	console.log("message received at content.js");
 	var type = message.type;
+	var txt = message.txt;
 
 	switch(type) {
 		case "onLoad_request":
@@ -104,7 +115,7 @@ function gotMessage(message,sender,sendresponse)
 			break;
 
 		case "contrast_request":
-			onContext(type);
+			onContext(type, txt);
 			break;
 	}
 }

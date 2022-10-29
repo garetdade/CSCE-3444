@@ -8,18 +8,47 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
-	"title": "Increase contrast",
+	"title": "Image settings",
 	"contexts": ["image"],
-	"id": "imagecont"
+	"id": "imagesettings"
+})
+
+chrome.contextMenus.create({
+	"title": "Adjust contrast",
+	"contexts": ["image"],
+	"id": "imagecont",
+	"parentId": "imagesettings"
+})
+
+chrome.contextMenus.create({
+	"title": "150%",
+	"contexts": ["image"],
+	"id": "150contrast",
+	"parentId": "imagecont"
+})
+
+chrome.contextMenus.create({
+	"title": "100%",
+	"contexts": ["image"],
+	"id": "100contrast",
+	"parentId": "imagecont"
+})
+
+chrome.contextMenus.create({
+	"title": "50%",
+	"contexts": ["image"],
+	"id": "50contrast",
+	"parentId": "imagecont"
 })
 
 //Acts when context menu entry is clicked
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	var text = info.selectionText;
 
-	if(info.menuItemId === "imagecont") {
+	if(info.parentMenuItemId === "imagecont") {
 		let msg = {
-			type: "contrast_request"
+			type: "contrast_request",
+			txt: info.menuItemId
 		}
 		chrome.tabs.sendMessage(tab.id, msg)
 	}
