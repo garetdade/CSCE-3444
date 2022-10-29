@@ -1,46 +1,5 @@
 console.log("Background running...");
 
-//Creates chrome.contextMenu object
-chrome.contextMenus.create({
-    "title": "Speak selected text",
-    "contexts": ["selection"],
-    "id": "speak"
-})
-
-chrome.contextMenus.create({
-	"title": "Image settings",
-	"contexts": ["image"],
-	"id": "imagesettings"
-})
-
-chrome.contextMenus.create({
-	"title": "Adjust contrast",
-	"contexts": ["image"],
-	"id": "imagecont",
-	"parentId": "imagesettings"
-})
-
-chrome.contextMenus.create({
-	"title": "150%",
-	"contexts": ["image"],
-	"id": "150contrast",
-	"parentId": "imagecont"
-})
-
-chrome.contextMenus.create({
-	"title": "100%",
-	"contexts": ["image"],
-	"id": "100contrast",
-	"parentId": "imagecont"
-})
-
-chrome.contextMenus.create({
-	"title": "50%",
-	"contexts": ["image"],
-	"id": "50contrast",
-	"parentId": "imagecont"
-})
-
 //Acts when context menu entry is clicked
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	var text = info.selectionText;
