@@ -4,9 +4,9 @@ console.log("Background running...");
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	var text = info.selectionText;
 
-	if(info.parentMenuItemId === "imagecont") {
+	if(info.parentMenuItemId === "imagecont" || info.parentMenuItemId === "imagebright") {
 		let msg = {
-			type: "contrast_request",
+			type: "image_request",
 			txt: info.menuItemId
 		}
 		chrome.tabs.sendMessage(tab.id, msg)

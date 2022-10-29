@@ -2,8 +2,10 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
 //Adjusts contrast of all images on a webpage
-function imageContrast(txt)
+function imageSettings(txt)
 {
+	console.log("imagesettings called");
+	console.log(txt);
 	let images = document.getElementsByTagName("img");
 
 	switch(txt) {
@@ -17,6 +19,18 @@ function imageContrast(txt)
 
 		case "150contrast":
 			for(img of images) {img.style["filter"] = "contrast(150%)";}
+			break;
+
+		case "50brightness":
+			for(img of images) {img.style["filter"] = "brightness(50%)";}
+			break;
+		
+		case "100brightness":
+			for(img of images) {img.style["filter"] = "brightness(100%)";}
+			break;
+
+		case "150brightness":
+			for(img of images) {img.style["filter"] = "brightness(150%)";}
 			break;
 	}
 }
@@ -100,7 +114,7 @@ function onClick(type)
 //In-progress function for routing all contextMenu actions to functions
 function onContext(type, txt)
 {
-	imageContrast(txt);
+	imageSettings(txt);
 	return;
 }
 
@@ -120,7 +134,7 @@ function gotMessage(message,sender,sendresponse)
 			onClick(type);
 			break;
 
-		case "contrast_request":
+		case "image_request":
 			onContext(type, txt);
 			break;
 	}
