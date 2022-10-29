@@ -1,16 +1,5 @@
 chrome.runtime.onMessage.addListener(gotMessage);
 
-function comicSansChange() {
-	//Log for debugging only
-	console.log("comicSansChange() initiated...");
-	let paragraphs = document.getElementsByTagName("p");
-	
-	for(par of paragraphs)
-	{
-		par.style['fontFamily'] = "Comic Sans MS";
-	}
-}
-
 function paragraphHighlighting()
 {
 	//Log for debugging only
@@ -41,6 +30,17 @@ function paragraphHighlighting()
 		par.style['color'] = 'black';
 		par.style['font-variant-ligatures'] = 'none';
 		count = count + 1;
+	}
+}
+
+function comicSansChange() {
+	//Log for debugging only
+	console.log("comicSansChange() initiated...");
+	let paragraphs = document.getElementsByTagName("p");
+	
+	for(par of paragraphs)
+	{
+		par.style['fontFamily'] = "Comic Sans MS";
 	}
 }
 
