@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Namer", 
-    "description": "", 
-    "version": "0.1.0", 
-    "author": "Team Heimdall",
+    "name": "CSCE3444 Accessibility Extension", 
+    "description": "A suite of accessibility features.", 
+    "version": "0.1", 
+    "author": "Ali, Garet, and Spencer",
 
     "content_scripts": [
         {
