@@ -3,11 +3,22 @@ function gotMessage(message,sender,sendresponse)
 {
 	console.log(message.txt);
 	let paragraphs = document.getElementsByTagName("p");
+	let count = 0;
 	for(par of paragraphs)
 	{
-		par.style['background-color'] = 'AntiqueWhite';
+		console.log(count);
+		if (count % 2 == 0)
+		{
+			par.style['background-color'] = 'AntiqueWhite';
+		}
+		else 
+		{
+			par.style['background-color'] = 'Beige';
+		}
+		
 		par.style['color'] = 'black';
 		par.style['font-variant-ligatures'] = 'none';
+		count = count + 1;
 	}
 
 	let headers3 = document.getElementsByTagName("h3");
