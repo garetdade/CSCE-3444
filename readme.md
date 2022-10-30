@@ -14,15 +14,8 @@ The text-to-speech feature allows a user to highlight text and have it read alou
 ### **Image Adjustment**
 The image adjustment feature allows a user to adjust the contrast and brightness of the images on a webpage. To use this feature, a user must right click on an image and hover over "Image settings".
 
-### **Webpage Color Swapping**
-The webpage color swap feature is built to invert a webpage's background color and text color's. Swapping to light text on a dark background has been shown to help visibility for some, while reducing eye strain.
-
-### **Adjustable Font Spacing**
-The font spacing feature allows users to adjust the amount of space between displayed characters and words.
-
+Tools are being added.
 ---
-
-THE TOOLS SECTIONS IS CURRENTLY UNDER CONSTRUCTION
 
 ## **Installation**
 ### Option 1: Chrome Web Store
