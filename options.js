@@ -21,21 +21,21 @@ function save_options() {
     });
   }
   
-  // Restores select box and checkbox state using the preferences
-  // stored in chrome.storage.
-  function restore_options() {
-    chrome.storage.local.get({
-      shading_setting: true,
-      comicSans_setting: false,
-      readingSpeed_setting: 1.0,
-      invertColors_setting: false
-    }, function(items) {
-      document.getElementById('paragraphShading_checkbox').checked = items.shading_setting;
-      document.getElementById('comicSans_checkbox').checked = items.comicSans_setting;
-      document.getElementById('readingSpeed_range').value = items.readingSpeed_setting;
-      document.getElementById('colorInvert_checkbox').checked = items.invertColors_setting;
-    });
-  }
-  document.addEventListener('DOMContentLoaded', restore_options);
-  document.getElementById('save').addEventListener('click',
-      save_options);
+// Restores select box and checkbox state using the preferences
+// stored in chrome.storage.
+function restore_options() {
+  chrome.storage.local.get({
+    shading_setting: true,
+    comicSans_setting: false,
+    readingSpeed_setting: 1.0,
+    invertColors_setting: false
+  }, function(items) {
+    document.getElementById('paragraphShading_checkbox').checked = items.shading_setting;
+    document.getElementById('comicSans_checkbox').checked = items.comicSans_setting;
+    document.getElementById('readingSpeed_range').value = items.readingSpeed_setting;
+    document.getElementById('colorInvert_checkbox').checked = items.invertColors_setting;
+  });
+}
+document.addEventListener('DOMContentLoaded', restore_options);
+document.getElementById('save').addEventListener('click',
+    save_options);
