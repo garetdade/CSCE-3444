@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head><title>Accessibility Options</title></head>
+<head>
+  <title>Accessibility Options</title>
+  <link rel="stylesheet" href="optionstyles.css">
+</head>
 <body>
 
-<h3>Reading Assistance Options</h3>
+<h1>Reading Assistance Options</h1>
 
-<label>
+<!-- <label>
   <input type="checkbox" id="colorInvert_checkbox">
   Invert colors
-</label><br>
+</label><br> -->
 
 <label>
   <input type="checkbox" id="paragraphShading_checkbox">
@@ -20,13 +23,22 @@
   Use Comic Sans font when possible
 </label>
 
-<h3>Text-to-Speech Options</h3>
+<h1>Text-to-Speech Options</h1>
 
+<!---
+<select name="dialect" id="dialect">
+  <option value="en-us">American English</option>
+  <option value="en-au">Australian English</option>
+  <option value="en-gb">British English</option>
+</select>
+<label for="dialect">English Dialect</label><br>
+-->
 <input type="range" id="readingSpeed_range" min=".5" max="2" step=".1">
 <label for="readingSpeed_range">Reading Speed</label>
 
 <div id="status"></div>
-<button id="save">Save</button>
+<br>
+<button type="button" class="button" id="save">Save</button>
 
 <script src="options.js"></script>
 </body>
