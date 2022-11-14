@@ -13,9 +13,16 @@ function imageSettings(txt)
 			for(img of images) {img.style["filter"] = "contrast(50%)";}
 			break;
 		
+		case "75contrast":
+			for(img of images) {img.style["filter"] = "contrast(75%)";}
+
 		case "100contrast":
 			for(img of images) {img.style["filter"] = "contrast(100%)";}
 			break;
+
+		case "125contrast":
+			for(img of images) {img.style["filter"] = "contrast(125%)";}
+
 
 		case "150contrast":
 			for(img of images) {img.style["filter"] = "contrast(150%)";}
