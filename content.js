@@ -78,13 +78,23 @@ function paragraphHighlighting()
 }
 
 //Changes paragraph font to Comic Sans
-function comicSansChange() {
+function fontChange(altFont) {
 	//Log for debugging only
 	let paragraphs = document.getElementsByTagName("p");
 	
+	switch(altFont) {
+		case "ComicSans":
+			altFont = "Comic Sans MS"
+			break;
+
+		case "Times":
+			altFont = "Times New Roman"
+			break;
+	}
+
 	for(par of paragraphs)
 	{
-		par.style['fontFamily'] = "Comic Sans MS";
+		par.style['fontFamily'] = altFont;
 	}
 
 	return;
@@ -109,17 +119,19 @@ function onClick(type)
 	//Setting up toggleables
 	chrome.storage.local.get([
 		"shading_setting",
-		"comicSans_setting"
+		"alternateFont_setting",
+		"alternateFont_selection"
 	], function(items) {
 		var highlighting = items.shading_setting;
-		var comicSansSelected = items.comicSans_setting;
+		var fontChangeSelected = items.alternateFont_setting;
+		var altFont = items.alternateFont_selection;
 
 		if (highlighting === true) {
 			paragraphHighlighting();
 		}
 
-		if (comicSansSelected === true) {
-			comicSansChange();
+		if (fontChangeSelected === true) {
+			fontChange(altFont);
 		}
 	});
 
