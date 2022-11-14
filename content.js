@@ -31,9 +31,17 @@ function imageSettings(txt)
 		case "50brightness":
 			for(img of images) {img.style["filter"] = "brightness(50%)";}
 			break;
+
+		case "75brightness":
+			for(img of images) {img.style["filter"] = "brightness(75%)";}
+			break;
 		
 		case "100brightness":
 			for(img of images) {img.style["filter"] = "brightness(100%)";}
+			break;
+
+		case "125brightness":
+			for(img of images) {img.style["filter"] = "brightness(125%)";}
 			break;
 
 		case "150brightness":

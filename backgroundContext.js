@@ -72,9 +72,23 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
+	"title": "125%",
+	"contexts": ["image"],
+	"id": "125brightness",
+	"parentId": "imagebright"
+})
+
+chrome.contextMenus.create({
 	"title": "100%",
 	"contexts": ["image"],
 	"id": "100brightness",
+	"parentId": "imagebright"
+})
+
+chrome.contextMenus.create({
+	"title": "75%",
+	"contexts": ["image"],
+	"id": "75brightness",
 	"parentId": "imagebright"
 })
 
