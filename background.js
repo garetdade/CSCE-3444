@@ -14,13 +14,16 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
 	else {
 		chrome.storage.local.get({
-			"readingSpeed_setting" : 1.0
+			"readingSpeed_setting" : 1.0,
+			"dialect" : "en-us"
 		}, function(items) {
 			var readingSpeed = items.readingSpeed_setting;
+			var dialect = items.dialect;
 			readingSpeed = parseFloat(readingSpeed);
 			console.log("Reading speed:");
 			console.log(readingSpeed);
-			chrome.tts.speak(text, {"rate" : readingSpeed});
+
+			chrome.tts.speak(text, {"rate" : readingSpeed, "voiceName" : "Google US English"});
 		});
 	}
 	
@@ -36,6 +39,19 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
 
 		chrome.tabs.sendMessage(tab.id, msg)
 	}
+
+	chrome.tts.getVoices(
+		function(voices) {
+		  for (var i = 0; i < voices.length; i++) {
+			console.log('Voice ' + i + ':');
+			console.log('  name: ' + voices[i].voiceName);
+			console.log('  lang: ' + voices[i].lang);
+			console.log('  extension id: ' + voices[i].extensionId);
+			console.log('  event types: ' + voices[i].eventTypes);
+		  }
+		}
+	);
+
   })
 
 //Acts when extension icon is clicked
@@ -50,3 +66,4 @@ function IconClicked(tab)
 	}
 	chrome.tabs.sendMessage(tab.id,msg);
 }
+

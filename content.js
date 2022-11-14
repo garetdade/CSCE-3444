@@ -63,11 +63,11 @@ function paragraphHighlighting()
 		odd = count % 2;
 		switch(odd) {
 			case 0:
-				par.style['background-color'] = 'AntiqueWhite';
+				par.style['background-color'] = '#FBDF8A';
 				break;
 
 			case 1: 
-				par.style['background-color'] = 'Beige';
+				par.style['background-color'] = '#79AEDC';
 				break;
 		}
 
