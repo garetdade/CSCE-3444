@@ -133,6 +133,8 @@ function onClick(type)
 		if (fontChangeSelected === true) {
 			fontChange(altFont);
 		}
+
+		shortcuts();
 	});
 
 	return;
@@ -166,4 +168,10 @@ function gotMessage(message,sender,sendresponse)
 			break;
 	}
 	return;
+}
+
+
+//HOTKEY TESTING
+function shortcuts() {
+
 }
