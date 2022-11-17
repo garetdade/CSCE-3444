@@ -3,6 +3,7 @@ function save_options() {
     var shadingToggle = document.getElementById('paragraphShading_checkbox').checked;
     var alternateFontToggle = document.getElementById('altFont_checkbox').checked;
     var alternateFont = document.getElementById('fonts').value;
+    var shortcutToggle = document.getElementById('shortCut_checkbox').value;
     var readingSpeed = document.getElementById('readingSpeed_range').value;
 
     console.log(readingSpeed);
@@ -10,7 +11,8 @@ function save_options() {
       shading_setting: shadingToggle,
       readingSpeed_setting: readingSpeed,
       alternateFont_setting: alternateFontToggle,
-      alternateFont_selection: alternateFont
+      alternateFont_selection: alternateFont,
+      shortcut_setting: shortcutToggle
     }, function() {
       // Update status to let user know options were saved.
       var status = document.getElementById('status');
@@ -29,7 +31,8 @@ function restore_options() {
     comicSans_setting: false,
     readingSpeed_setting: 1.0,
     alternateFont_setting: false,
-    alternateFont_selection: "Arial"
+    alternateFont_selection: "Arial",
+    shortcut_setting: false
   }, function(items) {
     document.getElementById('paragraphShading_checkbox').checked = items.shading_setting;
     document.getElementById('readingSpeed_range').value = items.readingSpeed_setting;
