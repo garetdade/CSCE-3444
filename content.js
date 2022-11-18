@@ -120,11 +120,13 @@ function onClick(type)
 	chrome.storage.local.get([
 		"shading_setting",
 		"alternateFont_setting",
-		"alternateFont_selection"
+		"alternateFont_selection",
+		"shortcut_setting"
 	], function(items) {
 		var highlighting = items.shading_setting;
 		var fontChangeSelected = items.alternateFont_setting;
 		var altFont = items.alternateFont_selection;
+		var doShortcut = items.shortcut_setting;
 
 		if (highlighting === true) {
 			paragraphHighlighting();
@@ -134,7 +136,10 @@ function onClick(type)
 			fontChange(altFont);
 		}
 
-		shortcuts();
+		if (doShortcut === true)
+		{
+			shortcuts();
+		}
 	});
 
 	return;
