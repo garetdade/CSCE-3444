@@ -180,3 +180,53 @@ function gotMessage(message,sender,sendresponse)
 function shortcuts() {
 
 }
+
+//Seizure Blocker Function - Not fully functional
+function sBlocker(textNode)
+{
+  try {
+	  //Get all images
+	  var imageList = textNode.getElementsByTagName('img');
+	  
+	  //Find .gif files
+	  var images = []
+	  for (var i = 0; i < imageList.length; i++)
+	  {
+		if (imageList[i].src.split('.').pop() == 'gif') {
+		  images.push(imageList[i])	
+		}
+	  }
+	  
+	  //Loop through .gif files and find slowed ones
+	  for (var i = 0; i < images.length; i++)
+	  {
+		  src = images[i].src
+		  $x = images[i]
+		  
+		  //get request
+		 var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function() { 
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		        	console.log(xmlHttp.responseText)
+
+		        	// Responds with slowed gif
+		        	$x.style.backgroundImage = "url('https://"+xmlHttp.responseText+"')";
+					$x.style.backgroundPosition = 'center center';
+					$x.style.backgroundRepeat = "no-repeat";
+		    }
+		    xmlHttp.send(null);
+		}
+	} catch (error){
+		console.log("e: "+error);
+	}
+}
+var localStorageIsOn="0"
+chrome.storage.sync.get('localStorageIsOn', function(items){
+    localStorageIsOn = items['localStorageIsOn'];
+	if (localStorageIsOn=="1") {
+		handleIMGS(document);
+	}
+	chrome.storage.local.clear(function() {});
+});
+	  }
+}
