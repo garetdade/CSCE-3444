@@ -176,9 +176,24 @@ function gotMessage(message,sender,sendresponse)
 }
 
 
-//HOTKEY TESTING
+//HOTKEYS
 function shortcuts() {
-
+	document.onkeyup = function(e) {
+		if (e.which == 77) {
+		  alert("M key was pressed");	
+		  //test key
+		} else if (e.ctrlKey && e.which == 66) {
+		  alert ("Ctrl B shortcut was pressed");
+			highlighting = true;
+		}else if (e.ctrlKey && e.which == 89) {
+			alert ("Ctrl Y was pressed");
+			fontChange("ComicSans");
+		}else if (e.ctrlKey && e.which == 85) {
+			alert ("Ctrl U was pressed");
+			fontChange("Times");
+		}
+		
+	}
 }
 
 //Seizure Blocker Function - Not fully functional
