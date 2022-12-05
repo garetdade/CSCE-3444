@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accessibility Options</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<h1>Reading Assistance Options</h1>
+
+<!-- <label>
+  <input type="checkbox" id="colorInvert_checkbox">
+  Invert colors
+</label><br> -->
+
+<label>
+  <input type="checkbox" id="paragraphShading_checkbox">
+  Shade Paragraph Backgrounds
+</label><br>
+
+<label>
+  <input type="checkbox" id="altFont_checkbox">
+  Use Alternate Font When Possible
+</label>
+
+<select name="fonts" id="fonts">
+  <option value="Arial">Arial</option>
+  <option value="ComicSans">Comic Sans</option>
+  <option value="Times">Times New Roman</option>
+</select><br>
+
+<label> 
+  <input type = "checkbox" id = "shortCut_checkbox">
+  Enable Keyboard Shortcuts
+</label>
+
+<h1>Text-to-Speech Options</h1>
+
+<input type="range" id="readingSpeed_range" min=".5" max="1.5" step=".1">
+<label for="readingSpeed_range">Reading Speed</label><br>
+
+<div id="status"></div>
+<br>
+<button type="button" class="button" id="save">Save</button>
+
+<script src="options.js"></script>
+</body>
+</html>

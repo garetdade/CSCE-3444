@@ -1,0 +1,17 @@
+head {
+    min-width: 400px;
+    max-width: 800px;
+}
+
+body {
+    min-width: 400px;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    display: inline;
+}
