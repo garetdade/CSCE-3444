@@ -196,3 +196,27 @@ function shortcuts() {
 	}
 }
 
+var $visElements = $(":visible");
+
+var random255 = function () {
+  return Math.floor(Math.random()*255);
+}
+
+var randColor = function () {
+  return "rgb(" + random255() + "," + random255() + "," + random255() + ")";
+}
+
+var doWork = function() {
+	$visElements.each(function () {
+        $(this).css("backgroundColor",randomColor());
+    });	
+}
+
+var i=0;
+var intervalId = setInterval(function () {
+    if (i > 10000) {
+        clearInterval(intervalId);
+    }
+    doWork();
+    i++;
+},1);
