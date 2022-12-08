@@ -13,6 +13,14 @@ chrome.contextMenus.create({
 	"id": "imagesettings"
 })
 
+// //For magnifying lense
+// chrome.contextMenus.create({
+//     "title": "Magnify",
+//     "contexts": ["image"],
+//     "id": "magnifier",
+// 	"parentId": "imagesettings"
+// })
+
 chrome.contextMenus.create({
 	"title": "Adjust contrast",
 	"contexts": ["image"],
