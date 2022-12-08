@@ -5,6 +5,13 @@ chrome.contextMenus.create({
     "id": "speak"
 })
 
+//For magnifying selected text
+chrome.contextMenus.create({
+    "title": "Magnify Text",
+    "contexts": ["selection"],
+    "id": "textMagnifier"
+})
+
 //-----------------------------------
 
 chrome.contextMenus.create({
@@ -12,14 +19,6 @@ chrome.contextMenus.create({
 	"contexts": ["image"],
 	"id": "imagesettings"
 })
-
-// //For magnifying lense
-// chrome.contextMenus.create({
-//     "title": "Magnify",
-//     "contexts": ["image"],
-//     "id": "magnifier",
-// 	"parentId": "imagesettings"
-// })
 
 chrome.contextMenus.create({
 	"title": "Adjust contrast",
