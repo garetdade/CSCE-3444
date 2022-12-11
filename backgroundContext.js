@@ -5,6 +5,13 @@ chrome.contextMenus.create({
     "id": "speak"
 })
 
+//For magnifying selected text
+chrome.contextMenus.create({
+    "title": "Magnify Text",
+    "contexts": ["selection"],
+    "id": "textMagnifier"
+})
+
 //-----------------------------------
 
 chrome.contextMenus.create({
