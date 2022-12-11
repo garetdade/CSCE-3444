@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "CSCE3444 Accessibility Extension", 
     "description": "A suite of accessibility features.", 
     "version": "0.1", 
@@ -13,17 +13,39 @@
     ],
 
     "background": {
-        "scripts": ["background.js", "backgroundContext.js"]
+        "service_worker": [
+            "background.js", 
+            "backgroundContext.js", 
+            "inject.js",
+            "chrome.js",
+            "common.js"
+        ]
     },
 
     "browser_action": {
+
     },
 
     "permissions": [
         "storage",
         "contextMenus",
-        "tts"
+        "tts",
+        "activeTab",
+        "scripting"
     ],
 
-    "options_page": "options.html"
+    "options_page": "options.html",
+
+    "action": {
+        "default_title": "Magnifying Glass"
+    },
+
+    "commands": {
+        "magnify": {
+        "description": "Magnifying Glass",
+        "suggested_key": {
+            "default": "Alt+Shift+Z"
+        }
+        }
+    }
 }

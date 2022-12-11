@@ -12,6 +12,12 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 		chrome.tabs.sendMessage(tab.id, msg)
 	}
 
+	// else if(info.parentMenuItemId === "magnifier"){
+	// 	chrome.browserAction.contextMenus.onClicked.addListener((tab) => {
+	// 		chrome.tabs.executeScript(null, {file: "inject.js"});
+	// 	})
+	// }
+
 	else {
 		chrome.storage.local.get({
 			"readingSpeed_setting" : 1.0,

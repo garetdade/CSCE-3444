@@ -7,9 +7,9 @@ chrome.contextMenus.create({
 
 //For magnifying selected text
 chrome.contextMenus.create({
-    "title": "Magnify Text",
-    "contexts": ["selection"],
-    "id": "textMagnifier"
+    "title": "Magnifing Glass",
+    "contexts": ["all"],
+    "id": "magnifier"
 })
 
 //-----------------------------------

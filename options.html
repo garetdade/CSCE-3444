@@ -25,21 +25,47 @@
 </select><br>
 
 <label> 
-  <input type = "checkbox" id = "shortCut_checkbox">
+  <input type="checkbox" id="shortCut_checkbox">
   Enable Keyboard Shortcuts
-</label>
-
-<h1>Image Options</h1>
-
-<label>
-  <input type="checkbox" id="image_magnifier">
-  Image Magnifer
 </label><br>
+
+<!-- <label>
+  <input type="checkbox" id="textSize">
+  Change Text Size
+  <input type="button" id="decreaseFontSize" value="-">
+  <input id=pageFontSize type=number value="">
+  <input type="button" id="increaseFontSize" value="+">
+</label><br> -->
 
 <h1>Text-to-Speech Options</h1>
 
 <input type="range" id="readingSpeed_range" min=".5" max="1.5" step=".1">
 <label for="readingSpeed_range">Reading Speed</label><br>
+
+<!-- html for magnifying glass -->
+<h1>Magnifying Glass Options</h1>
+
+<div class="content">
+  <table>
+    <tr>
+      <td class="title"><b>I</b>. Capture Area</td>
+      <td>
+        <input data-pref="magnifier.size" type="number" min="10"></input><span> pixels</span>
+        <p class="note">The capture area corresponds to:</p>
+        <p class="note">(a X a) pixels of the visible screen's area.</p>
+        <p class="note">Default area size is (150 X 150) px</p>
+      </td>
+    </tr>
+    <tr><td colspan='2' class="spacing"></td></tr>
+    <tr>
+      <td class="title"><b>II</b>. Zoom Level</td>
+      <td>
+        <input data-pref="magnifier.zoom" type="number" min="1"></input><span> X</span>
+        <p class="note">Default zoom value is 2X</p>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <div id="status"></div>
 <br>

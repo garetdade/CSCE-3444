@@ -1,0 +1,14 @@
+#magnifying-glass-container {
+  z-index: 9999999 !important;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background-color: #FFF !important;
+  border: solid 1px #dedede !important;
+}
+
+#magnifying-glass-container,
+#magnifying-glass-container img {
+  top: 0;
+  left: 0;
+  position: absolute !important;
+}
